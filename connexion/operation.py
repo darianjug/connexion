@@ -95,7 +95,7 @@ class SecureOperation(object):
                 if token_info_url:
                     return functools.partial(verify_oauth_remote, token_info_url, scopes)
                 else:
-                    logger.warning("... OAuth2 token info URL missing. **IGNORING SECURITY REQUIREMENTS**",
+                    logger.debug("... OAuth2 token info URL missing. **IGNORING SECURITY REQUIREMENTS**",
                                    extra=vars(self))
             elif security_definition['type'] in ('apiKey', 'basic'):
                 logger.debug(
